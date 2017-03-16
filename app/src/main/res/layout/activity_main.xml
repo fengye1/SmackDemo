@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lvpf.myapplicationd.com.lvpf.samckdemo.activity.MainActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        toolbar:title="openfire Demo"
+        toolbar:titleTextColor="@color/white"
+        toolbar:theme="@style/ToolbarTheme"
+        >
+    </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="admin"
+        android:hint="请输入账户"
+
+        />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="openfire_yaofang.cn123"
+        android:hint="请输入密码" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册" />
+</LinearLayout>

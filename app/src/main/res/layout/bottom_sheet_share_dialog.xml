@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/setting_avalibe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="设置在线"
+        android:padding="6dp"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="45dp"
+        android:alpha="0.7"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/setting_Qme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:gravity="center_horizontal"
+        android:text="设置Q我吧"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="45dp"
+        android:alpha="0.7"
+        android:background="@android:color/darker_gray" />
+
+
+    <TextView
+        android:id="@+id/setting_busy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="6dp"
+        android:text="设置忙碌"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="45dp"
+        android:alpha="0.7"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/setting_leave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:gravity="center_horizontal"
+        android:text="设置离开"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="45dp"
+        android:alpha="0.7"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/setting_hiding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="6dp"
+        android:text="设置隐身"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="45dp"
+        android:alpha="0.7"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/setting_offline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:gravity="center_horizontal"
+        android:text="设置离线"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="45dp"
+        android:alpha="0.7"
+        android:background="@android:color/darker_gray" />
+</LinearLayout>

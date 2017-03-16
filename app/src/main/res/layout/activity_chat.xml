@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lvpf.myapplicationd.com.lvpf.samckdemo.activity.ChatActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            toolbar:navigationIcon="@drawable/navigation_back_white"
+            toolbar:title=""
+            toolbar:titleTextColor="@color/white"
+            android:theme="@style/ToolbarTheme"
+            >
+        </android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0">
+
+            <ListView
+                android:id="@+id/chat_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:fadingEdgeLength="0dp"
+                android:fastScrollEnabled="true"
+                android:listSelector="@android:color/transparent"
+                android:paddingBottom="10dp"
+                android:transcriptMode="normal" />
+
+            <RelativeLayout
+                android:id="@+id/layout_record"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@drawable/chat_top_voice_bg"
+                android:padding="10dp"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/iv_record"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/chat_icon_voice1" />
+
+                <TextView
+                    android:id="@+id/tv_voice_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_record"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <include
+            android:id="@+id/include_input"
+            layout="@layout/include_chat_bottom_bar" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
