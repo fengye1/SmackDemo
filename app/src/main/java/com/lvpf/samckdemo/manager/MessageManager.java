@@ -120,11 +120,6 @@ public class MessageManager {
 		return list;
 
 	}
-	
-	
-	
-
-	
 
 	/**
 	 * 
@@ -161,52 +156,5 @@ public class MessageManager {
 		return st.deleteByCondition("im_msg_his", "msg_from=?",
 				new String[] { "" + fromUser });
 	}
-	
-
-
-	/**
-	 * 
-	 * 获取最近聊天人聊天最后一条消息和未读消息总数
-	 * 
-	 * @return
-	 * @author shimiso
-	 * @update 2012-5-16 下午3:22:53
-	 */
-	public List<ChartHisBean> getRecentContactsWithLastMsg() {
-		SQLiteTemplate st = SQLiteTemplate.getInstance(manager, false);
-		List<ChartHisBean> list = st
-				.queryForList(
-						new SQLiteTemplate.RowMapper<ChartHisBean>() {
-							@Override
-							public ChartHisBean mapRow(Cursor cursor, int index) {
-								ChartHisBean notice = new ChartHisBean();
-								notice.setId(cursor.getString(cursor
-										.getColumnIndex("_id")));
-								notice.setContent(cursor.getString(cursor
-										.getColumnIndex("content")));
-								notice.setFrom(cursor.getString(cursor
-										.getColumnIndex("msg_from")));
-								notice.setNoticeTime(cursor.getString(cursor
-										.getColumnIndex("msg_time")));
-								notice.setThread_id(cursor.getInt(cursor
-										.getColumnIndex("thread_id")));
-								return notice;
-							}
-						},
-						"select m.[_id],m.[content],m.[msg_time],m.msg_from,m.[thread_id] from im_msg_his  m " +
-						"	join (select msg_from,max(msg_time) as time from im_msg_his group by msg_from) " +
-						"	as tem  on  tem.time=m.msg_time and tem.msg_from=m.msg_from ",
-						null);
-		for (ChartHisBean b : list) {
-			int count = st
-					.getCount(
-							"select _id from im_notice where status=? and type=? and notice_from=?",
-							new String[] { "" + Notice.UNREAD,
-									"" + Notice.CHAT_MSG, b.getFrom() });
-			b.setNoticeSum(count);
-		}
-		return list;
-	}
-
 
 }

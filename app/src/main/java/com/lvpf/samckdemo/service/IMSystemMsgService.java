@@ -94,8 +94,9 @@ public class IMSystemMsgService extends Service {
                 notice.setTo(packetz.getTo());
                 notice.setStatus(Notice.UNREAD);
                 long noticeId = noticeManager.saveNotice(notice);
-
-                simpleNotify(notice);
+                if (noticeId!=-1){
+                    simpleNotify(notice);
+                }
             }
         }
     };

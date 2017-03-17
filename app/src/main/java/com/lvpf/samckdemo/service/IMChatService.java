@@ -1,6 +1,5 @@
 package com.lvpf.samckdemo.service;
 
-import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +10,6 @@ import com.lvpf.samckdemo.model.Constant;
 import com.lvpf.samckdemo.utils.DateUtil;
 import com.lvpf.samckdemo.model.IMMessage;
 import com.lvpf.samckdemo.manager.MessageManager;
-import com.lvpf.samckdemo.sql.SQLService;
-import com.lvpf.samckdemo.model.UserSQL;
 import com.lvpf.samckdemo.manager.XmppConnectionManager;
 
 import org.jivesoftware.smack.PacketListener;
@@ -30,8 +27,6 @@ import java.util.Calendar;
  */
 public class IMChatService extends Service {
     private Context context;
-    private NotificationManager notificationManager;
-    public static final int TYPE_Normal = 1;
 
     @Override
     public void onCreate() {
@@ -56,7 +51,6 @@ public class IMChatService extends Service {
     }
 
     private void initChatManager() {
-        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         XMPPConnection conn = XmppConnectionManager.getInstance()
                 .getConnection();
         conn.addPacketListener(pListener, new MessageTypeFilter(
@@ -90,13 +84,6 @@ public class IMChatService extends Service {
                 newMessage.setContent(message.getBody());
                 newMessage.setTime(time);
                 MessageManager.getInstance(context).saveIMMessage(newMessage);
-
-                UserSQL sqlUser = new UserSQL();
-                sqlUser.setServer_client(1);
-                sqlUser.setFrom_user_type(1);
-                sqlUser.setNotice_type(Constant.notice_type_chat_ask);
-                sqlUser.setNotice_content(newMessage.getContent());
-                SQLService.getInstance().add(sqlUser);
 
                 Intent intent = new Intent(Constant.NEW_MESSAGE_ACTION);
                 intent.putExtra(IMMessage.IMMESSAGE_KEY, msg);

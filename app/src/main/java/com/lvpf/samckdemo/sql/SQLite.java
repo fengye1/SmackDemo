@@ -16,17 +16,6 @@ public class SQLite extends SQLiteOpenHelper {
 	@Override
 	// 数据库第一次被创建时调用
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("CREATE TABLE lm_notice " + "("
-				+ "  id INTEGER PRIMARY KEY AUTOINCREMENT ,"
-				+ "  server_client int NOT NULL default 0 ,"
-				+ " from_user_type int NOT NULL default 0 ,"
-				+ " from_user_id int NOT NULL default 0,"
-				+ "other_id int NOT NULL default 0,"
-				+ "notice_type int NOT NULL default 0,"
-				+ " notice_content varchar(256) NOT NULL default \'\' ,"
-				+ " add_time datetime not null default '2015-08-01',"
-				+ " update_time datetime not null default '2015-08-01'" + ");");
-		
 		db.execSQL("" +
 				"CREATE TABLE [im_msg_his] (" +
 				"	[_id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
@@ -37,8 +26,7 @@ public class SQLite extends SQLiteOpenHelper {
 				"	[msg_type] INTEGER " +
 				");");
 		
-		//content,msg_from, msg_type,msg_time,thread_id
-		
+
 		db.execSQL("CREATE TABLE [im_notice]  " +
 				"	([_id] INTEGER NOT NULL  PRIMARY KEY AUTOINCREMENT, " +
 				"	[type] INTEGER, " +
