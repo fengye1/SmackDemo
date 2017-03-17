@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Applicationd</string>
+    <string name="app_name">SmackDemo</string>
     <integer name="xmpp_port">5222</integer>
     <string name="xmpp_host">192.168.22.243</string>
     <string name="xmpp_service_name">192.168.22.243</string>
@@ -22,4 +22,6 @@
     <string name="camera">相机</string>
     <string name="picture">图片</string>
     <string name="voice_cancel_tips">松开手指，取消发送</string>
+    <string name="voice_cancel_tdips">dd</string>
+
 </resources>
