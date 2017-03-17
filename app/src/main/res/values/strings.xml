@@ -22,6 +22,5 @@
     <string name="camera">相机</string>
     <string name="picture">图片</string>
     <string name="voice_cancel_tips">松开手指，取消发送</string>
-    <string name="voice_cancel_tdips">dd</string>
 
 </resources>
